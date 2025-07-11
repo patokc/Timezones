@@ -81,7 +81,7 @@ class Program
                     25)) // 26th day (representing 25th at 24:00:00)
         });
 
-        var jsonOptions = new JsonSerializerOptions { WriteIndented = true };
+        var jsonOptions = new JsonSerializerOptions { WriteIndented = true, Encoder = System.Text.Encodings.Web.JavaScriptEncoder.UnsafeRelaxedJsonEscaping };
         string jsonOutput = JsonSerializer.Serialize(results, jsonOptions);
         Console.WriteLine(jsonOutput);
     }
